@@ -1,0 +1,25 @@
+{
+  "name": "lint-staged-demo",
+  "version": "1.0.0",
+  "description": "Demo autofix issue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-staged": "lint-staged",
+    "lint": "eslint *.js"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "Samuel Sharpe",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2"
+  }
+}
